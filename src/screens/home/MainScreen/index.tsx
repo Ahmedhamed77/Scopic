@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 
 import {styles} from './style';
-import {View, Text} from 'react-native';
-import {CommonButton, CommonInput, Dictionary} from '../../../shared';
+import {View} from 'react-native';
+import {
+  CommonButton,
+  CommonInput,
+  CustomText,
+  Dictionary,
+} from '../../../shared';
 
 interface HomeScreenProps {}
 
@@ -10,7 +15,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = () => {
   const [name, setName] = useState('');
   return (
     <View style={styles.container}>
-      <Text>welcome to home screen</Text>
+      <CustomText>welcome to home screen</CustomText>
       <CommonInput
         label={Dictionary.email}
         value={name}

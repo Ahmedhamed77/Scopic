@@ -11,6 +11,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {COLORS} from '../../styles';
+import {CustomText} from '../customText';
 
 interface CommonButtonProps extends Omit<TouchableOpacityProps, 'style'> {
   title: string;
@@ -41,7 +42,9 @@ export const CommonButton: React.FC<CommonButtonProps> = ({
           touchableStyle,
         ]}
         {...props}>
-        <Text style={[styles.touchableText, titleStyle]}>{title}</Text>
+        <CustomText style={[styles.touchableText, titleStyle]}>
+          {title}
+        </CustomText>
       </TouchableOpacity>
     </View>
   );

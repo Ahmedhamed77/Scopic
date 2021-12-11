@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     borderBottomColor: COLORS.dustyGray,
     borderBottomWidth: 1,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
   },
   labelText: {
     color: COLORS.brightRed,

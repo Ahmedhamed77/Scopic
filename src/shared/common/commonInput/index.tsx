@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, TextInput, TextInputProps, View} from 'react-native';
+import {CustomText} from '..';
 
 import {COLORS} from '../../styles';
 import {styles} from './style';
@@ -11,8 +12,7 @@ interface CommonInputProps extends TextInputProps {
 export const CommonInput: React.FC<CommonInputProps> = ({label, ...props}) => {
   return (
     <View>
-      <Text>Common Input</Text>
-      {label && <Text style={styles.labelText}>{label}</Text>}
+      {label && <CustomText style={styles.labelText}>{label}</CustomText>}
       <TextInput
         style={styles.textInputStyle}
         autoCorrect={false}
