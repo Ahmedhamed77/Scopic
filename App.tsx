@@ -1,19 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
-import React from 'react';
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
+import React, {useEffect, useState} from 'react';
 import {AuthStack, MainStack} from './src/navigation';
 import {withProviders} from './src/shared';
+import {UseAuth} from './src/shared/hooks';
 
-const isAuth = true;
 const App = () => {
+  const {isAuth, user} = UseAuth();
+  console.log(user, '===');
   return <>{isAuth ? <MainStack /> : <AuthStack />}</>;
 };
 

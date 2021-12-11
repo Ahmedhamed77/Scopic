@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "913107713899",
+    "project_id": "scopie-8e5aa",
+    "storage_bucket": "scopie-8e5aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913107713899:android:d252c1e8d85599a528162e",
+        "android_client_info": {
+          "package_name": "com.scopic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "913107713899-an4u4k75qr95q4h5fsejl1q8ef7p7s7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkxQXeCegUHnh5KoLRCMmdfkh5zTsTrx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "913107713899-an4u4k75qr95q4h5fsejl1q8ef7p7s7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

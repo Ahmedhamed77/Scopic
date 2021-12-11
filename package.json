@@ -10,15 +10,25 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^13.1.0",
+    "@react-native-firebase/auth": "^13.1.0",
+    "@react-native-firebase/firestore": "^13.1.0",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "@react-navigation/stack": "^6.0.11",
     "@types/compose-function": "^0.0.30",
     "compose-function": "^3.0.3",
+    "formik": "^2.2.9",
     "react": "17.0.2",
     "react-native": "0.66.3",
+    "react-native-flipper": "^0.125.0",
     "react-native-safe-area-context": "^3.3.2",
-    "react-native-screens": "^3.10.1"
+    "react-native-screens": "^3.10.1",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-flipper": "^2.0.1",
+    "redux-thunk": "^2.4.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

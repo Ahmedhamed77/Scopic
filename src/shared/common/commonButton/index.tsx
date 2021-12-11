@@ -3,7 +3,6 @@ import React from 'react';
 import {styles} from './style';
 import {
   StyleProp,
-  Text,
   TextStyle,
   TouchableOpacity,
   TouchableOpacityProps,
@@ -13,11 +12,13 @@ import {
 import {COLORS} from '../../styles';
 import {CustomText} from '../customText';
 
-interface CommonButtonProps extends Omit<TouchableOpacityProps, 'style'> {
+export interface CommonButtonProps
+  extends Omit<TouchableOpacityProps, 'style'> {
   title: string;
   wrapperContainer?: StyleProp<ViewStyle>;
   touchableStyle?: StyleProp<ViewStyle>;
-  isDisabled: boolean;
+  isDisabled?: boolean;
+  isLoading?: boolean;
   titleStyle?: StyleProp<TextStyle>;
 }
 

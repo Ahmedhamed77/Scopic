@@ -1,31 +1,35 @@
-import React, {useState} from 'react';
-
-import {styles} from './style';
+import React from 'react';
 import {View} from 'react-native';
+
+import {
+  AppNavigation,
+  MainParams,
+} from '../../../navigation/mainStack/interface';
 import {
   CommonButton,
-  CommonInput,
   CustomText,
   Dictionary,
+  ScreenLayout,
 } from '../../../shared';
+import {styles} from './style';
 
-interface HomeScreenProps {}
+interface HomeScreenProps {
+  navigation: AppNavigation;
+}
 
-export const HomeScreen: React.FC<HomeScreenProps> = () => {
-  const [name, setName] = useState('');
+export const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
+  const onPress = () => navigation.navigate(MainParams.list);
   return (
-    <View style={styles.container}>
-      <CustomText>welcome to home screen</CustomText>
-      <CommonInput
-        label={Dictionary.email}
-        value={name}
-        onChangeText={setName}
-      />
-      <CommonButton
-        touchableStyle={styles.buttonStyle}
-        title={Dictionary.login}
-        isDisabled={true}
-      />
-    </View>
+    <ScreenLayout>
+      <View style={styles.container}>
+        <CustomText style={styles.welcomeText} fontFamily="Poppins-Bold">
+          {Dictionary.welcome}
+        </CustomText>
+        <CustomText style={styles.welcomeMsgText}>
+          {Dictionary.welcomeMsg}
+        </CustomText>
+        <CommonButton onPress={onPress} title="list" />
+      </View>
+    </ScreenLayout>
   );
 };
