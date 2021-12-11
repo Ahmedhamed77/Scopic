@@ -1,0 +1,17 @@
+export enum COLORS {
+  yellowGreen = '#88B840',
+  white = '#FFFFFF',
+  solidGreen = '#2B8741',
+  darkGreen = '#88B84066',
+  darkGray = '#474747',
+  aluminum = '#ADB3BC',
+  lightAluminum = '#AEAEB2',
+  whiteSmoke = '#F4F4F4',
+  dustyGray = '#999999',
+  doveGray = '#727272',
+  sun = '#FAAE1C',
+  mercury = '#E8E8E8',
+  darkRed = '#FF0000',
+  brightRed = '#f04758',
+  black = '#000000',
+}
