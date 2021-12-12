@@ -14,4 +14,8 @@ export enum COLORS {
   darkRed = '#FF0000',
   brightRed = '#f04758',
   black = '#000000',
+  smoke = '#fcfcfc',
+  danger = '#b60000',
+  shadGray = '#818181',
+  lightShadGray = '#efefef',
 }

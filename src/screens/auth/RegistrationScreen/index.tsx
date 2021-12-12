@@ -44,7 +44,7 @@ export const RegistrationScreen: React.FC<RegistrationScreenProps> = ({
             fontFamily="Poppins-Bold"
             style={styles.signUpText}
             onPress={onSignIn}>
-            {Dictionary.signUp}
+            {Dictionary.SignIn}
           </CustomText>
         </View>
       </View>

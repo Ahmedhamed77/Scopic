@@ -1,3 +1,4 @@
+import {COLORS} from './../../styles/colors/index';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -5,39 +6,31 @@ export const styles = StyleSheet.create({
     flex: 1,
     minHeight: 300,
   },
-  row: {
-    flexDirection: 'row',
-    flex: 1,
-    alignItems: 'center',
-    paddingLeft: 5,
-    backgroundColor: '#efefef',
-    margin: 20,
-    minHeight: 50,
-  },
   swipedRow: {
     flexDirection: 'row',
     flex: 1,
     alignItems: 'center',
     paddingLeft: 5,
-    backgroundColor: '#818181',
-    margin: 20,
+    backgroundColor: COLORS.shadGray,
+    // margin: 20,
+    margin: 12,
     minHeight: 50,
   },
   swipedConfirmationContainer: {
     flex: 1,
   },
   deleteConfirmationText: {
-    color: '#fcfcfc',
+    color: COLORS.smoke,
     fontWeight: 'bold',
   },
   deleteButton: {
-    backgroundColor: '#b60000',
+    backgroundColor: COLORS.danger,
     flexDirection: 'column',
     justifyContent: 'center',
     height: '100%',
   },
   deleteButtonText: {
-    color: '#fcfcfc',
+    color: COLORS.smoke,
     fontWeight: 'bold',
     padding: 3,
   },

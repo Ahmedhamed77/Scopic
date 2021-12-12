@@ -2,6 +2,7 @@ import React from 'react';
 
 import {styles} from './style';
 import {
+  ActivityIndicator,
   StyleProp,
   TextStyle,
   TouchableOpacity,
@@ -28,11 +29,13 @@ export const CommonButton: React.FC<CommonButtonProps> = ({
   touchableStyle,
   isDisabled,
   titleStyle,
+  isLoading,
   ...props
 }) => {
   return (
     <View style={[styles.container, wrapperContainer]}>
       <TouchableOpacity
+        activeOpacity={1}
         style={[
           styles.touchableContainer,
           {
@@ -43,9 +46,13 @@ export const CommonButton: React.FC<CommonButtonProps> = ({
           touchableStyle,
         ]}
         {...props}>
-        <CustomText style={[styles.touchableText, titleStyle]}>
-          {title}
-        </CustomText>
+        {isLoading ? (
+          <ActivityIndicator />
+        ) : (
+          <CustomText style={[styles.touchableText, titleStyle]}>
+            {title}
+          </CustomText>
+        )}
       </TouchableOpacity>
     </View>
   );

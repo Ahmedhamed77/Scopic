@@ -17,17 +17,13 @@ export type initialFormValues = Readonly<
 >;
 
 export interface UseFormikContext {
-  setFieldValue: (
-    field: string,
-    value: any,
-    shouldValidate?: boolean | undefined,
-  ) => void;
+  setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void;
   values: any;
   errors: FormikErrors<any>;
   setFieldTouched: (
     field: string,
-    isTouched?: boolean | undefined,
-    shouldValidate?: boolean | undefined,
+    isTouched?: boolean,
+    shouldValidate?: boolean,
   ) => void;
   touched: FormikTouched<any>;
 }

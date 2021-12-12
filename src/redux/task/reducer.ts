@@ -1,36 +1,37 @@
+import {Task} from '../../shared';
 import {Action, ActionType} from './types';
 
-interface UserReducer {
-  user: {} | null;
+interface TaskReducer {
+  tasks: Task[];
   loading: boolean;
   error: string | null;
 }
 const initialState = {
-  user: {},
+  tasks: [],
   loading: false,
   error: null,
 };
 
-export const userReducer = (
-  state: UserReducer = initialState,
+export const taskReducer = (
+  state: TaskReducer = initialState,
   action: Action,
-): UserReducer => {
+): TaskReducer => {
   switch (action.type) {
-    case ActionType.USER_LOADING:
+    case ActionType.TASK_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case ActionType.GET_USER:
+    case ActionType.GET_TASK:
       return {
         loading: false,
-        user: action.payload,
+        tasks: action.payload,
         error: null,
       };
-    case ActionType.USER_ERROR:
+    case ActionType.TASK_ERROR:
       return {
         loading: false,
-        user: null,
+        tasks: [],
         error: action.payload,
       };
     default:

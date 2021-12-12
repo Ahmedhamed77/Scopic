@@ -1,18 +1,19 @@
 import React from 'react';
 
 import {styles} from './style';
-import {Modal, TouchableNativeFeedback, View} from 'react-native';
+import {Modal, View} from 'react-native';
 import {
   AppForm,
   AppInputField,
   AppSubmitButton,
   CustomText,
+  initialFormValues,
   validationTaskSchema,
 } from '../../../../shared';
 
 interface CreateTaskProps {
   modalVisible: boolean;
-  onSubmitTask(): void;
+  onSubmitTask(values: initialFormValues): void;
   onClose(): void;
 }
 

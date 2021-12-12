@@ -5,8 +5,7 @@ import {withProviders} from './src/shared';
 import {UseAuth} from './src/shared/hooks';
 
 const App = () => {
-  const {isAuth, user} = UseAuth();
-  console.log(user, '===');
+  const {isAuth} = UseAuth();
   return <>{isAuth ? <MainStack /> : <AuthStack />}</>;
 };
 
