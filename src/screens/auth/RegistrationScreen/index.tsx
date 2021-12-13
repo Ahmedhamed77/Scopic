@@ -25,8 +25,9 @@ export const RegistrationScreen: React.FC<RegistrationScreenProps> = ({
   navigation,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const onSignIn = () => navigation.navigate(AuthParams.login);
   const dispatch = useDispatch();
+
+  const onSignIn = () => navigation.navigate(AuthParams.login);
 
   const onSubmit = (values: RegisterValue) => {
     setIsLoading(true);
@@ -41,6 +42,7 @@ export const RegistrationScreen: React.FC<RegistrationScreenProps> = ({
         setIsLoading(false);
       });
   };
+
   return (
     <ScreenLayout scroll>
       <View style={styles.container}>

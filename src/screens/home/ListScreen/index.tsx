@@ -21,35 +21,35 @@ interface ListScreenProps {
 }
 
 export const ListScreen: React.FC<ListScreenProps> = ({navigation}) => {
-  const {user} = UseAuth();
   const [modalVisible, setModalVisible] = useState(false);
-  const {persistTasks} = useSelector((state: Store) => state.persistTasks);
+  const [toggle, setToggle] = useState(false);
 
-  const dispatch = useDispatch();
+  const {user} = UseAuth();
+
+  const {persistTasks} = useSelector((state: Store) => state.persistTasks);
   const {tasks, loading} = useSelector((store: Store) => store.task);
 
-  const [toggle, setToggle] = useState(false);
-  const toggleSwitch = () => setToggle(previousState => !previousState);
-
-  const onNavigation = () => navigation.navigate(MainParams.profile);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     user && dispatch(getTasks(user.uid));
   }, [user, dispatch]);
+
+  const toggleSwitch = () => setToggle(previousState => !previousState);
+
+  const onNavigation = () => navigation.navigate(MainParams.profile);
 
   const onAdd = () => {
     setModalVisible(true);
   };
 
   const onSubmitTask = (values: TaskValues) => {
-    console.log(values);
     if (toggle) {
       user && addTask(values, user?.uid);
-      onCloseModal();
     } else {
       dispatch(createNewTask(values.title));
-      onCloseModal();
     }
+    onCloseModal();
   };
 
   const onDelete = (id: string) => {
