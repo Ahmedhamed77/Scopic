@@ -1,9 +1,10 @@
 import {Dispatch} from 'redux';
-import firestore from '@react-native-firebase/firestore';
 
+import firestore from '@react-native-firebase/firestore';
 import {Action, ActionType} from './types';
-import {Task, TaskData} from '../../shared';
-import {DB} from '../../shared/firebase/db';
+
+import {TaskData, Task} from '@Shared/index';
+import {DB} from '@Shared/firebase/db';
 
 export const getTasks = (id: string) => async (dispatch: Dispatch<Action>) => {
   dispatch({type: ActionType.TASK_LOADING});
@@ -18,7 +19,10 @@ export const getTasks = (id: string) => async (dispatch: Dispatch<Action>) => {
           id: doc.id,
         }));
 
-        dispatch({type: ActionType.GET_TASK, payload: tasks});
+        dispatch({
+          type: ActionType.GET_TASK,
+          payload: tasks as Omit<Task[], 'title'>,
+        });
       });
   } catch (error) {
     dispatch({type: ActionType.TASK_ERROR, payload: error});

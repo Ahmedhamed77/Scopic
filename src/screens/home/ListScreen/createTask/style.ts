@@ -1,7 +1,7 @@
 import {StyleSheet, Dimensions} from 'react-native';
 const {height} = Dimensions.get('window');
 
-import {COLORS} from '../../../../shared';
+import {COLORS} from '@Shared/styles';
 
 export const styles = StyleSheet.create({
   container: {

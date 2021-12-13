@@ -2,7 +2,7 @@ import React from 'react';
 
 import {styles} from './style';
 import {View} from 'react-native';
-import {Header, Toggle} from '../../../../shared';
+import {Header, Toggle} from '@Shared/index';
 
 interface HeaderFlatListProps {
   onHeaderPress(): void;

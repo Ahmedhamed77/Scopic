@@ -2,26 +2,22 @@ import {Task} from '../../shared';
 
 export enum ActionType {
   GET_TASK = 'GET_USER',
-  TASK_LOADING = 'USER_LOADING',
-  TASK_ERROR = 'USER_ERROR',
-  GET_LOGGED_IN = 'GET_LOGGED_IN',
+  TASK_LOADING = 'TASK_LOADING',
+  TASK_ERROR = 'TASK_ERROR',
 }
 
-interface GetUser {
+interface GetTasks {
   type: ActionType.GET_TASK;
   payload: Task[];
 }
 
-interface UserLoading {
+interface TaskLoading {
   type: ActionType.TASK_LOADING;
 }
 
-interface UserError {
+interface TaskError {
   type: ActionType.TASK_ERROR;
   payload: any;
 }
-interface LoggedIn {
-  type: ActionType.GET_LOGGED_IN;
-}
 
-export type Action = GetUser | UserLoading | UserError | LoggedIn;
+export type Action = GetTasks | TaskLoading | TaskError;

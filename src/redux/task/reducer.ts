@@ -1,4 +1,4 @@
-import {Task} from '../../shared';
+import {Task} from '@Shared/index';
 import {Action, ActionType} from './types';
 
 interface TaskReducer {

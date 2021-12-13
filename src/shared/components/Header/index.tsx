@@ -1,13 +1,11 @@
 import React from 'react';
 import {StyleProp, TouchableOpacity, View, ViewStyle} from 'react-native';
+
 import {useNavigation} from '@react-navigation/core';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {MainParams, MainParamsList} from '@Navigation/mainStack/interface';
 
-import {CustomText, Dictionary} from '../..';
-import {
-  MainParams,
-  MainParamsList,
-} from '../../../navigation/mainStack/interface';
+import {CustomText, Dictionary} from '@Shared/index';
 import {styles} from './style';
 
 export type HeaderProps = {

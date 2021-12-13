@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {CustomText} from '../customText';
-import {COLORS} from '../../styles';
+import {COLORS} from '@Shared/styles';
 
 interface Props {
   message?: string;

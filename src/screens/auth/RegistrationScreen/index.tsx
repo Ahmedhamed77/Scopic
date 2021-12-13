@@ -2,23 +2,20 @@ import React, {useState} from 'react';
 import {Alert, TouchableOpacity, View} from 'react-native';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 
-import {
-  AuthNavigation,
-  AuthParams,
-} from '../../../navigation/authStack/interface';
+import {AuthNavigation, AuthParams} from '@Navigation/authStack/interface';
 import {
   COLORS,
   CustomText,
   Dictionary,
   RegisterValue,
   ScreenLayout,
-} from '../../../shared';
+} from '@Shared/index';
 import {RegistrationFrom} from './registrationForm';
 
 import {styles} from './style';
-import {addUser} from '../../../shared/firebase/addUser';
+import {addUser} from '@Shared/firebase/addUser';
 import {useDispatch} from 'react-redux';
-import {registerNewUser} from '../../../redux/auth/action';
+import {registerNewUser} from '@Redux/auth/action';
 
 interface RegistrationScreenProps {
   navigation: AuthNavigation;

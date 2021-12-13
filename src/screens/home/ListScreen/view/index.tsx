@@ -10,11 +10,11 @@ import {
   Swipable,
   Task,
   TaskValues,
-} from '../../../../shared';
+} from '@Shared/index';
 import {Footer} from '../footer';
 import {HeaderFlatList} from '../header';
-import {PersistTasks} from '../../../../redux/persistTasks/types';
-import {Empty} from '../../../../shared/common/Empty';
+import {PersistTasks} from '@Redux/persistTasks/types';
+import {Empty} from '@Shared/common/Empty';
 
 interface ListScreenViewProps {
   modalVisible: boolean;

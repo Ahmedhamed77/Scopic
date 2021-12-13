@@ -1,6 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-import {COLORS} from '../../../shared';
+import {COLORS} from '@Shared/styles';
 
 const {height} = Dimensions.get('window');
 
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   footer: {
     alignItems: 'flex-end',
-    marginBottom: 50,
+    marginBottom: 100,
   },
   footerText: {
     color: COLORS.brightRed,

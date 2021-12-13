@@ -1,22 +1,19 @@
 import React, {useEffect, useState} from 'react';
 
-import {
-  AppNavigation,
-  MainParams,
-} from '../../../navigation/mainStack/interface';
-import {Loader, ScreenLayout, TaskValues} from '../../../shared';
+import {AppNavigation, MainParams} from '@Navigation/mainStack/interface';
+import {Loader, ScreenLayout, TaskValues} from '@Shared/index';
 import {useDispatch, useSelector} from 'react-redux';
-import {Store} from '../../../redux/types';
-import {getTasks} from '../../../redux/task/action';
-import {addTask} from '../../../shared/firebase/addTask';
-import {deleteTask} from '../../../shared/firebase/deleteTask';
+import {Store} from '@Redux/types';
+import {getTasks} from '@Redux/task/action';
+import {addTask} from '@Shared/firebase/addTask';
+import {deleteTask} from '@Shared/firebase/deleteTask';
 import {ListScreenView} from './view';
-import {UseAuth} from '../../../shared/hooks';
+import {UseAuth} from '@Shared/hooks';
 
 import {
   createNewTask,
   deleteTask as deletePersistTasks,
-} from '../../../redux/persistTasks/action';
+} from '@Redux/persistTasks/action';
 import {styles} from './style';
 
 interface ListScreenProps {

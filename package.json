@@ -19,6 +19,7 @@
     "@react-navigation/stack": "^6.0.11",
     "@types/compose-function": "^0.0.30",
     "@types/react-native-vector-icons": "^6.4.10",
+    "babel-plugin-module-resolver": "^4.1.0",
     "compose-function": "^3.0.3",
     "formik": "^2.2.9",
     "react": "17.0.2",

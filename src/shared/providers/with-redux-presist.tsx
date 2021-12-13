@@ -1,4 +1,4 @@
-import {persistor} from '../../redux/store';
+import {persistor} from '@Redux/store';
 import React from 'react';
 import {PersistGate} from 'redux-persist/integration/react';
 

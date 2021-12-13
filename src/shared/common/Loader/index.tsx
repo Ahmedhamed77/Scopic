@@ -1,8 +1,8 @@
 import {View, ActivityIndicator, ViewStyle, StyleProp} from 'react-native';
 import React from 'react';
 
+import {COLORS} from '@Shared/styles';
 import {styles} from './style';
-import {COLORS} from '../../styles';
 interface LoaderProps {
   style?: StyleProp<ViewStyle>;
 }

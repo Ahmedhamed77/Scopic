@@ -6,8 +6,8 @@ import {
   Header,
   logout,
   ScreenLayout,
-} from '../../../shared';
-import {UseAuth} from '../../../shared/hooks';
+} from '@Shared/index';
+import {UseAuth} from '@Shared/hooks';
 import {styles} from './style';
 
 interface ProfileScreenProps {}

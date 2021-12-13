@@ -6,11 +6,11 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
-import {CustomText} from '..';
-
-import {COLORS} from '../../styles';
-import {styles} from './style';
+import {CustomText} from '../index';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+
+import {COLORS} from '@Shared/styles';
+import {styles} from './style';
 export interface CommonInputProps extends TextInputProps {
   label?: string;
   wrapperStyle?: StyleProp<ViewStyle>;

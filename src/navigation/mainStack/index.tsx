@@ -2,9 +2,9 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import {MainParams, MainParamsList} from './interface';
-import {WelcomeScreen, ListScreen, ProfileScreen} from '../../screens';
+import {WelcomeScreen, ListScreen, ProfileScreen} from '@Screens/index';
 import {useSelector} from 'react-redux';
-import {Store} from '../../redux/types';
+import {Store} from '@Redux/types';
 
 const Stack = createNativeStackNavigator<MainParamsList>();
 export const MainStack = () => {

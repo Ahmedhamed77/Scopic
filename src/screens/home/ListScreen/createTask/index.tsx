@@ -9,7 +9,7 @@ import {
   COLORS,
   initialFormValues,
   validationTaskSchema,
-} from '../../../../shared';
+} from '@Shared/index';
 import {styles} from './style';
 
 interface CreateTaskProps {

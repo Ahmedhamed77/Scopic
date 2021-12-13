@@ -7,8 +7,9 @@ import {
   AppSubmitButton,
   Dictionary,
   RegisterValue,
-} from '../../../../shared';
-import {validationLoginSchema} from '../../../../shared';
+  validationLoginSchema,
+} from '@Shared/index';
+
 import {styles} from './style';
 
 interface RegistrationFromProps {

@@ -3,6 +3,9 @@ import React from 'react';
 import {Animated, Text, View, TouchableOpacity} from 'react-native';
 import {GestureHandlerRootView, Swipeable} from 'react-native-gesture-handler';
 
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import {COLORS} from 'shared';
+
 import {styles} from './style';
 
 interface SwipableProps {
@@ -27,7 +30,7 @@ export const Swipable: React.FC<SwipableProps> = ({onDelete, children}) => {
         </View>
         <Animated.View style={[styles.deleteButton, {opacity}]}>
           <TouchableOpacity onPress={onDelete}>
-            <Text style={styles.deleteButtonText}>Delete</Text>
+            <Icon name="trash" size={20} color={COLORS.white} />
           </TouchableOpacity>
         </Animated.View>
       </View>

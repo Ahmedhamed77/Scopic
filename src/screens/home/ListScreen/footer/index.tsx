@@ -2,7 +2,7 @@ import React from 'react';
 
 import {styles} from './style';
 import {TouchableOpacity} from 'react-native';
-import {COLORS} from '../../../../shared';
+import {COLORS} from '@Shared/styles';
 import FoundationIcon from 'react-native-vector-icons/Foundation';
 interface FooterProps {
   onPress(): void;

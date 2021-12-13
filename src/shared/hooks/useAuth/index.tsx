@@ -4,9 +4,9 @@ import {useState} from 'react';
 export const UseAuth = () => {
   const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
 
-  function onAuthStateChanged(currentUser: FirebaseAuthTypes.User | null) {
-    setUser(currentUser || null);
-  }
+  const onAuthStateChanged = (currentUser: FirebaseAuthTypes.User | null) => {
+    currentUser ? setUser(currentUser) : setUser(null);
+  };
 
   auth().onAuthStateChanged(onAuthStateChanged);
 

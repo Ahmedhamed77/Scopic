@@ -1,7 +1,7 @@
 import {Alert} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 
-import {TaskValues} from '../../types';
+import {TaskValues} from '@Shared/types';
 import {DB} from '../db';
 
 export const updateTask = (id: string, values: TaskValues) => {

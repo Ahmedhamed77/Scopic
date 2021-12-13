@@ -1,16 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import {
-  AppNavigation,
-  MainParams,
-} from '../../../navigation/mainStack/interface';
+import {AppNavigation, MainParams} from '@Navigation/mainStack/interface';
 import {
   CommonButton,
   CustomText,
   Dictionary,
   ScreenLayout,
-} from '../../../shared';
+} from '@Shared/index';
 import {styles} from './style';
 
 interface WelcomeScreenProps {

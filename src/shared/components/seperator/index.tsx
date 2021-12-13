@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import {COLORS} from '../../styles';
+import {COLORS} from '@Shared/styles';
 
 interface Props {
   color?: string;

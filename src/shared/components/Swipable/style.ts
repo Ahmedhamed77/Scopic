@@ -1,4 +1,4 @@
-import {COLORS} from './../../styles/colors/index';
+import {COLORS} from '@Shared/styles';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   deleteButton: {
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.darkRed,
     paddingHorizontal: 12,
     flexDirection: 'column',
     justifyContent: 'center',

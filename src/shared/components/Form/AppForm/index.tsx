@@ -1,6 +1,6 @@
 import React from 'react';
 import {Formik} from 'formik';
-import {initialFormValues} from '../../../types';
+import {initialFormValues} from '@Shared/types';
 
 interface FormikProps {
   initialValues: initialFormValues;

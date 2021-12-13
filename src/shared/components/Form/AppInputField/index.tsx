@@ -1,11 +1,12 @@
 import React from 'react';
-import {useFormikContext} from 'formik';
-
-import {UseFormikContext} from '../../../types';
 import {Text, StyleSheet} from 'react-native';
 
-import {COLORS} from '../../../styles';
-import {CommonInput, CommonInputProps} from '../../../common';
+import {UseFormikContext} from '@Shared/types';
+
+import {useFormikContext} from 'formik';
+import {CommonInput, CommonInputProps} from '@Shared/common';
+
+import {COLORS} from '@Shared/styles';
 
 interface AppInputFieldProps extends CommonInputProps {
   name: string;

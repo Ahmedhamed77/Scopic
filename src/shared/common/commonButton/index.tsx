@@ -2,10 +2,10 @@ import React from 'react';
 
 import {styles} from './style';
 import {StyleProp, TextStyle, View, ViewStyle} from 'react-native';
-import {COLORS} from '../../styles';
 import {CustomText} from '../customText';
-import {PressableScale, PressableScaleProps} from '../../components';
+import {PressableScale, PressableScaleProps} from '@Shared/components';
 import {Loader} from '../Loader';
+import {COLORS} from '@Shared/styles';
 
 export interface CommonButtonProps extends PressableScaleProps {
   title: string;

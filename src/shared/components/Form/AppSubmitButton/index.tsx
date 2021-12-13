@@ -1,7 +1,7 @@
 import React from 'react';
 import {useFormikContext} from 'formik';
 
-import {CommonButton, CommonButtonProps} from '../../../common';
+import {CommonButton, CommonButtonProps} from '@Shared/common';
 
 interface Props extends Omit<CommonButtonProps, 'onPress'> {}
 

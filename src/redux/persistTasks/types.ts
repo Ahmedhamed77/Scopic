@@ -1,4 +1,4 @@
-import {Task} from '../../shared';
+import {Task} from '@Shared/index';
 
 export enum ActionType {
   CREATE_TASK = 'CREATE_TASK',
