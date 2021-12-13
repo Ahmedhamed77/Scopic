@@ -1,15 +1,16 @@
 import React from 'react';
+import {Modal, Pressable, View} from 'react-native';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
-import {styles} from './style';
-import {Modal, View} from 'react-native';
 import {
   AppForm,
   AppInputField,
   AppSubmitButton,
-  CustomText,
+  COLORS,
   initialFormValues,
   validationTaskSchema,
 } from '../../../../shared';
+import {styles} from './style';
 
 interface CreateTaskProps {
   modalVisible: boolean;
@@ -29,7 +30,9 @@ export const CreateTask: React.FC<CreateTaskProps> = ({
       visible={modalVisible}
       onRequestClose={onClose}>
       <View style={styles.container}>
-        <CustomText onPress={onClose}>X</CustomText>
+        <Pressable onPress={onClose}>
+          <FontAwesomeIcon name="close" size={30} color={COLORS.black} />
+        </Pressable>
         <AppForm
           initialValues={{
             title: '',

@@ -1,21 +1,19 @@
 import React from 'react';
 
 import {styles} from './style';
-import {View} from 'react-native';
-import {CommonButton} from '../../../../shared';
-
+import {TouchableOpacity} from 'react-native';
+import {COLORS} from '../../../../shared';
+import FoundationIcon from 'react-native-vector-icons/Foundation';
 interface FooterProps {
   onPress(): void;
 }
 
 export const Footer: React.FC<FooterProps> = ({onPress}) => {
   return (
-    <View style={styles.footerContainer}>
-      <CommonButton
-        touchableStyle={styles.button}
-        title="+"
-        onPress={onPress}
-      />
-    </View>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.footerContainer, styles.button]}>
+      <FoundationIcon name="plus" color={COLORS.white} size={30} />
+    </TouchableOpacity>
   );
 };

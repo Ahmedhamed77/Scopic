@@ -90,30 +90,3 @@ export const ListScreenView: React.FC<ListScreenViewProps> = ({
     </>
   );
 };
-
-// <CreateTask
-// modalVisible={modalVisible}
-// onClose={onCloseModal}
-// onSubmitTask={onSubmitTask}
-// />
-
-// <HeaderFlatList
-// onHeaderPress={onHeaderPress}
-// toggle={toggle}
-// onToggle={onSwitchToggle}
-// />
-// <View style={{paddingHorizontal: 24, backgroundColor: 'red'}}>
-// {/* {toggle ?} */}
-// {tasks.map(item => {
-//   console.log(item, '==');
-//   const title = item.data.title.trim().replace(/\s+/g, ' ');
-//   const onDeleteItem = () => onDelete(item.id);
-//   return (
-//     <Swipable key={item.id} onDelete={onDeleteItem}>
-//       <View style={styles.renderItemContainer}>
-//         <CustomText style={styles.titleStyle}>{title}</CustomText>
-//       </View>
-//     </Swipable>
-//   );
-// })}
-// </View>

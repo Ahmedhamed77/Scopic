@@ -24,6 +24,7 @@ interface LoginScreenProps {
 
 export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
   const [loading, setLoading] = useState(false);
+  const [toggleSecurity, setToggleSecurity] = useState(true);
   const dispatch = useDispatch();
 
   const onSubmit = (values: LoginValue) => {
@@ -44,9 +45,10 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
     navigation.navigate(AuthParams.registration);
   };
 
+  const onToggle = () => setToggleSecurity(!toggleSecurity);
+
   return (
     <ScreenLayout>
-      {/* <Icon name="rocket" size={30} color="#900" />; */}
       <View style={styles.container}>
         <View>
           <View style={styles.headerContainer}>
@@ -57,7 +59,12 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
           <CustomText fontFamily="Poppins-Bold" style={styles.signIn}>
             {Dictionary.SignIn}
           </CustomText>
-          <LoginForm onSubmitLogin={onSubmit} isLoading={loading} />
+          <LoginForm
+            onSubmitLogin={onSubmit}
+            onPressIcon={onToggle}
+            isLoading={loading}
+            security={toggleSecurity}
+          />
         </View>
 
         <TouchableOpacity

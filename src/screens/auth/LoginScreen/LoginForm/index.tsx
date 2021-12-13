@@ -10,15 +10,20 @@ import {
 import {validationLoginSchema} from '../../../../shared';
 import {LoginValue} from '../../../../shared';
 import {styles} from './style';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
 interface LoginFormProp {
   onSubmitLogin(values: LoginValue): void;
   isLoading?: boolean;
+  security: boolean;
+  onPressIcon?(): void;
 }
 
 export const LoginForm: React.FC<LoginFormProp> = ({
   onSubmitLogin,
   isLoading,
+  security,
+  onPressIcon,
 }) => {
   return (
     <View style={styles.container}>
@@ -34,7 +39,9 @@ export const LoginForm: React.FC<LoginFormProp> = ({
           label="password"
           placeholder="your password"
           name="password"
-          secureTextEntry={true}
+          secureTextEntry={security ? true : false}
+          onIconPress={onPressIcon}
+          icon={<MaterialIcon name="remove-red-eye" size={20} />}
         />
         <PressableScale activeScale={0.2}>
           <AppSubmitButton isLoading={isLoading} title={'sign in'} />

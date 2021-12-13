@@ -12,6 +12,7 @@ import {addTask} from '../../../shared/firebase/addTask';
 import {deleteTask} from '../../../shared/firebase/deleteTask';
 import {ListScreenView} from './view';
 import {UseAuth} from '../../../shared/hooks';
+
 import {
   createNewTask,
   deleteTask as deletePersistTasks,

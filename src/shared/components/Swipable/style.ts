@@ -12,7 +12,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 5,
     backgroundColor: COLORS.shadGray,
-    // margin: 20,
     margin: 12,
     minHeight: 50,
   },
@@ -24,7 +23,8 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   deleteButton: {
-    backgroundColor: COLORS.danger,
+    backgroundColor: COLORS.white,
+    paddingHorizontal: 12,
     flexDirection: 'column',
     justifyContent: 'center',
     height: '100%',

@@ -10,6 +10,8 @@ export const styles = StyleSheet.create({
     bottom: height / 6,
     left: width - 70,
     zIndex: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   button: {
     borderRadius: 50,
@@ -20,5 +22,6 @@ export const styles = StyleSheet.create({
     shadowOpacity: 0.6,
     shadowRadius: 3,
     elevation: 5,
+    backgroundColor: COLORS.brightRed,
   },
 });

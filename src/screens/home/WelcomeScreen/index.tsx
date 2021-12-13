@@ -31,7 +31,11 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({navigation}) => {
         <CustomText style={styles.welcomeMsgText}>
           {Dictionary.welcomeMsg}
         </CustomText>
-        <CommonButton onPress={onPress} title="list" />
+        <CommonButton
+          wrapperContainer={{marginBottom: 32}}
+          onPress={onPress}
+          title="list"
+        />
       </View>
     </ScreenLayout>
   );

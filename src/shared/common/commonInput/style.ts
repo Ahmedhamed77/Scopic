@@ -5,7 +5,13 @@ export const styles = StyleSheet.create({
   container: {
     marginBottom: 24,
   },
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   textInputStyle: {
+    flex: 1,
     alignItems: 'center',
     paddingVertical: 12,
     borderBottomColor: COLORS.dustyGray,
