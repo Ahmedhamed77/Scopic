@@ -14,6 +14,7 @@ import {
 import {Footer} from '../footer';
 import {HeaderFlatList} from '../header';
 import {PersistTasks} from '../../../../redux/persistTasks/types';
+import {Empty} from '../../../../shared/common/Empty';
 
 interface ListScreenViewProps {
   modalVisible: boolean;
@@ -78,13 +79,7 @@ export const ListScreenView: React.FC<ListScreenViewProps> = ({
           />
         }
         ItemSeparatorComponent={ItemSeparator}
-        ListEmptyComponent={() => {
-          return (
-            <View style={styles.emptyContainer}>
-              <CustomText>no tasks, try to add some</CustomText>
-            </View>
-          );
-        }}
+        ListEmptyComponent={Empty}
       />
       <Footer onPress={onAdd} />
     </>

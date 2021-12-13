@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {Alert, TouchableOpacity, View} from 'react-native';
+import {Alert, Pressable, View} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import {useDispatch} from 'react-redux';
 
 import {
   CustomText,
@@ -13,18 +14,14 @@ import {
   AuthNavigation,
   AuthParams,
 } from '../../../navigation/authStack/interface';
-import {styles} from './style';
-import {useDispatch} from 'react-redux';
 import {loginUser} from '../../../redux/auth/action';
-// import Icon from 'react-native-vector-icons/FontAwesome';
-
+import {styles} from './style';
 interface LoginScreenProps {
   navigation: AuthNavigation;
 }
 
 export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
   const [loading, setLoading] = useState(false);
-  const [toggleSecurity, setToggleSecurity] = useState(true);
   const dispatch = useDispatch();
 
   const onSubmit = (values: LoginValue) => {
@@ -32,7 +29,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
     auth()
       .signInWithEmailAndPassword(values.email, values.password)
       .then(() => {
-        console.log('user signed in');
         dispatch(loginUser());
       })
       .catch(err => {
@@ -44,8 +40,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
   const onSignUp = () => {
     navigation.navigate(AuthParams.registration);
   };
-
-  const onToggle = () => setToggleSecurity(!toggleSecurity);
 
   return (
     <ScreenLayout>
@@ -59,22 +53,14 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
           <CustomText fontFamily="Poppins-Bold" style={styles.signIn}>
             {Dictionary.SignIn}
           </CustomText>
-          <LoginForm
-            onSubmitLogin={onSubmit}
-            onPressIcon={onToggle}
-            isLoading={loading}
-            security={toggleSecurity}
-          />
+          <LoginForm onSubmitLogin={onSubmit} isLoading={loading} />
         </View>
 
-        <TouchableOpacity
-          activeOpacity={1}
-          onPress={onSignUp}
-          style={styles.footer}>
+        <Pressable onPress={onSignUp} style={styles.footer}>
           <CustomText fontFamily="Poppins-Bold" style={styles.footerText}>
             {Dictionary.signUp}
           </CustomText>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </ScreenLayout>
   );

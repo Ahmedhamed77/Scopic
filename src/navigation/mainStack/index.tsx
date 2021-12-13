@@ -12,24 +12,11 @@ export const MainStack = () => {
 
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      {isNewUser ? (
-        <>
-          <Stack.Screen
-            name={MainParams.home}
-            component={WelcomeScreen}
-            options={{
-              gestureEnabled: true,
-            }}
-          />
-          <Stack.Screen name={MainParams.list} component={ListScreen} />
-          <Stack.Screen name={MainParams.profile} component={ProfileScreen} />
-        </>
-      ) : (
-        <>
-          <Stack.Screen name={MainParams.list} component={ListScreen} />
-          <Stack.Screen name={MainParams.profile} component={ProfileScreen} />
-        </>
+      {isNewUser && (
+        <Stack.Screen name={MainParams.home} component={WelcomeScreen} />
       )}
+      <Stack.Screen name={MainParams.list} component={ListScreen} />
+      <Stack.Screen name={MainParams.profile} component={ProfileScreen} />
     </Stack.Navigator>
   );
 };

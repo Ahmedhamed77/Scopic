@@ -18,7 +18,7 @@ export const ScreenLayout: React.FC<ScreenProps> = ({
   if (scroll) {
     return (
       <ScrollView style={styles.screen} {...scrollLayoutProps}>
-        {children}
+        <SafeAreaView style={styles.screen}>{children}</SafeAreaView>
       </ScrollView>
     );
   } else {

@@ -1,13 +1,17 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 import {COLORS} from '../../../shared';
 
+const {height} = Dimensions.get('window');
+
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height,
+    width: '100%',
     paddingHorizontal: 38,
     justifyContent: 'space-between',
   },
+
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',

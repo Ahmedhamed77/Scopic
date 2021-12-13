@@ -1,13 +1,12 @@
 import React from 'react';
 
-import {Animated, Text, View} from 'react-native';
-import {Swipeable, TouchableOpacity} from 'react-native-gesture-handler';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome5';
-import {COLORS} from '../../styles';
+import {Animated, Text, View, TouchableOpacity} from 'react-native';
+import {GestureHandlerRootView, Swipeable} from 'react-native-gesture-handler';
+
 import {styles} from './style';
 
 interface SwipableProps {
-  onDelete?(): void;
+  onDelete(): void;
 }
 
 export const Swipable: React.FC<SwipableProps> = ({onDelete, children}) => {
@@ -28,13 +27,15 @@ export const Swipable: React.FC<SwipableProps> = ({onDelete, children}) => {
         </View>
         <Animated.View style={[styles.deleteButton, {opacity}]}>
           <TouchableOpacity onPress={onDelete}>
-            <FontAwesomeIcon name="trash" color={COLORS.darkRed} size={20} />
+            <Text style={styles.deleteButtonText}>Delete</Text>
           </TouchableOpacity>
         </Animated.View>
       </View>
     );
   };
   return (
-    <Swipeable renderRightActions={renderRightActions}>{children}</Swipeable>
+    <GestureHandlerRootView>
+      <Swipeable renderRightActions={renderRightActions}>{children}</Swipeable>
+    </GestureHandlerRootView>
   );
 };

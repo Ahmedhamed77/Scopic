@@ -5,12 +5,12 @@ import {COLORS} from '../../../../shared';
 
 export const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: height / 2,
-    top: height / 1.5,
+    width: '90%',
+    marginLeft: '5%',
+    height: height / 3,
+    top: height / 4,
     backgroundColor: COLORS.whiteSmoke,
-    borderTopRightRadius: 20,
-    borderTopLeftRadius: 20,
+    borderRadius: 20,
     padding: 12,
   },
 });

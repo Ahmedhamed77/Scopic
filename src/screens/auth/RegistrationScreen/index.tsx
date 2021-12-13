@@ -45,7 +45,7 @@ export const RegistrationScreen: React.FC<RegistrationScreenProps> = ({
       });
   };
   return (
-    <ScreenLayout>
+    <ScreenLayout scroll>
       <View style={styles.container}>
         <CustomText fontFamily="Poppins-Bold" style={styles.signInText}>
           {Dictionary.SignIn}
