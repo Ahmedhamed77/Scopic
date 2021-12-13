@@ -20,7 +20,6 @@ export const LoginForm: React.FC<LoginFormProp> = ({
   onSubmitLogin,
   isLoading,
 }) => {
-  console.log(isLoading, '-isLoading');
   return (
     <View style={styles.container}>
       <AppForm

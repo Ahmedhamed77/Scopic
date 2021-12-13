@@ -12,6 +12,8 @@ export const styles = StyleSheet.create({
     padding: 6,
     marginTop: 12,
     minHeight: 50,
+    borderRadius: 4,
+    justifyContent: 'center',
   },
   titleStyle: {
     textTransform: 'capitalize',
@@ -23,4 +25,5 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.lightAluminum,
     height: 2,
   },
+  emptyContainer: {justifyContent: 'center', alignItems: 'center'},
 });

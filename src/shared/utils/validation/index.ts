@@ -16,5 +16,4 @@ export const validationRegisterSchema = Yup.object().shape({
 
 export const validationTaskSchema = Yup.object().shape({
   title: Yup.string().max(40, 'title 40').required().label('Title'),
-  desc: Yup.string().max(150).label('Description'),
 });

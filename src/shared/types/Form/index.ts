@@ -10,7 +10,6 @@ export interface RegisterValue extends LoginValue {
 
 export interface TaskValues {
   title: string;
-  desc: string;
 }
 export type initialFormValues = Readonly<
   LoginValue | RegisterValue | TaskValues

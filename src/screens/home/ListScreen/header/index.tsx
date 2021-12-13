@@ -21,6 +21,7 @@ export const HeaderFlatList: React.FC<HeaderFlatListProps> = ({
         screenTitle="list"
         rightTitle="Profile"
         onNextScreen={onHeaderPress}
+        inverted
       />
       <View style={styles.toggleContainer}>
         <Toggle value={toggle} onToggle={onToggle} />

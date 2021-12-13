@@ -6,7 +6,7 @@ import {DB} from '../db';
 
 export const updateTask = (id: string, values: TaskValues) => {
   firestore()
-    .collection(DB.task)
+    .collection(DB.tasks)
     .doc(id)
     .update({
       values,

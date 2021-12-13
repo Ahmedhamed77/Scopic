@@ -6,6 +6,12 @@ import {CommonButton, CommonButtonProps} from '../../../common';
 interface Props extends Omit<CommonButtonProps, 'onPress'> {}
 
 export const AppSubmitButton: React.FC<Props> = ({...props}) => {
-  const {handleSubmit} = useFormikContext();
-  return <CommonButton onPress={handleSubmit} {...props} />;
+  const {handleSubmit, isValid, dirty} = useFormikContext();
+  return (
+    <CommonButton
+      onPress={handleSubmit}
+      isDisabled={!isValid || !dirty}
+      {...props}
+    />
+  );
 };

@@ -5,7 +5,7 @@ import {DB} from '../db';
 
 export const deleteTask = (id: string) => {
   firestore()
-    .collection(DB.task)
+    .collection(DB.tasks)
     .doc(id)
     .delete()
     .then(() => {

@@ -5,10 +5,12 @@ import {
   CustomText,
   Header,
   logout,
+  PressableScale,
   ScreenLayout,
 } from '../../../shared';
 import {UseAuth} from '../../../shared/hooks';
 
+import {styles} from './style';
 interface ProfileScreenProps {}
 interface IRow {
   id: string;
@@ -19,24 +21,14 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = () => {
 
   return (
     <ScreenLayout>
-      <Header
-        wrapperStyle={{
-          paddingHorizontal: 12,
-        }}
-        screenTitle="list"
-      />
+      <Header wrapperStyle={styles.wrapper} screenTitle="list" />
 
-      <View
-        style={{
-          paddingTop: 50,
-          flex: 1,
-          justifyContent: 'space-between',
-          paddingHorizontal: 24,
-        }}>
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+      <View style={styles.contentContainer}>
+        <View style={styles.emailContainer}>
           <CustomText>{user?.email}</CustomText>
         </View>
-        <CommonButton title="logout" onPress={logout} />
+
+        <CommonButton onPress={logout} title="logout" />
       </View>
     </ScreenLayout>
   );

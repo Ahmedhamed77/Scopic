@@ -1,3 +1,4 @@
 export enum DB {
-  task = 'task',
+  users = 'Users',
+  tasks = 'Tasks',
 }

@@ -1,5 +1,6 @@
-import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {Alert, TouchableOpacity, View} from 'react-native';
+import auth from '@react-native-firebase/auth';
 
 import {
   CustomText,
@@ -12,8 +13,9 @@ import {
   AuthNavigation,
   AuthParams,
 } from '../../../navigation/authStack/interface';
-import {login} from '../../../shared';
 import {styles} from './style';
+import {useDispatch} from 'react-redux';
+import {loginUser} from '../../../redux/auth/action';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
 interface LoginScreenProps {
@@ -21,11 +23,25 @@ interface LoginScreenProps {
 }
 
 export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
+  const onSubmit = (values: LoginValue) => {
+    setLoading(true);
+    auth()
+      .signInWithEmailAndPassword(values.email, values.password)
+      .then(() => {
+        console.log('user signed in');
+        dispatch(loginUser());
+      })
+      .catch(err => {
+        Alert.alert(err.code);
+        setLoading(false);
+      });
+  };
+
   const onSignUp = () => {
     navigation.navigate(AuthParams.registration);
-  };
-  const onSubmit = (values: LoginValue) => {
-    login(values.email, values.password);
   };
 
   return (
@@ -41,7 +57,7 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({navigation}) => {
           <CustomText fontFamily="Poppins-Bold" style={styles.signIn}>
             {Dictionary.SignIn}
           </CustomText>
-          <LoginForm onSubmitLogin={onSubmit} />
+          <LoginForm onSubmitLogin={onSubmit} isLoading={loading} />
         </View>
 
         <TouchableOpacity

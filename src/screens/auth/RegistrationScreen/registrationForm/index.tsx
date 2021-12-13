@@ -13,10 +13,12 @@ import {styles} from './style';
 
 interface RegistrationFromProps {
   onSubmitRegistration(values: RegisterValue): void;
+  isLoading?: boolean;
 }
 
 export const RegistrationFrom: React.FC<RegistrationFromProps> = ({
   onSubmitRegistration,
+  isLoading,
 }) => {
   return (
     <View style={styles.container}>
@@ -44,6 +46,7 @@ export const RegistrationFrom: React.FC<RegistrationFromProps> = ({
           name="confirmPassword"
         />
         <AppSubmitButton
+          isLoading={isLoading}
           wrapperContainer={styles.wrapperButton}
           title={Dictionary.signUp}
         />

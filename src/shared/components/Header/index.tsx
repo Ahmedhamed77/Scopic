@@ -21,12 +21,14 @@ export type HeaderProps = {
   rightTitle?: string;
   onNextScreen?(): void;
   wrapperStyle?: StyleProp<ViewStyle>;
+  inverted?: boolean;
 };
 export const Header: React.FC<HeaderProps> = ({
   screenTitle,
   rightTitle,
   onNextScreen,
   wrapperStyle,
+  inverted,
 }) => {
   const navigation =
     useNavigation<StackNavigationProp<MainParamsList, MainParams>>();
@@ -36,22 +38,24 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <View style={[styles.container, wrapperStyle]}>
       <TouchableOpacity activeOpacity={1} onPress={onNavigateBack}>
-        <CustomText fontFamily="Poppins-Bold" style={styles.navigators}>
-          {Dictionary.back}
-        </CustomText>
+        {!inverted && (
+          <CustomText fontFamily="Poppins-Bold" style={styles.navigators}>
+            {Dictionary.back}
+          </CustomText>
+        )}
       </TouchableOpacity>
 
       <CustomText fontFamily="Poppins-Bold" style={styles.screenTitle}>
         {screenTitle}
       </CustomText>
 
-      {rightTitle && (
-        <TouchableOpacity activeOpacity={1} onPress={onNextScreen}>
+      <TouchableOpacity activeOpacity={1} onPress={onNextScreen}>
+        {rightTitle && (
           <CustomText fontFamily="Poppins-Bold" style={styles.navigators}>
             {rightTitle}
           </CustomText>
-        </TouchableOpacity>
-      )}
+        )}
+      </TouchableOpacity>
     </View>
   );
 };

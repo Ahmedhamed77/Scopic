@@ -1,20 +1,13 @@
 import React from 'react';
 
 import {styles} from './style';
-import {
-  ActivityIndicator,
-  StyleProp,
-  TextStyle,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  View,
-  ViewStyle,
-} from 'react-native';
+import {StyleProp, TextStyle, View, ViewStyle} from 'react-native';
 import {COLORS} from '../../styles';
 import {CustomText} from '../customText';
+import {PressableScale, PressableScaleProps} from '../../components';
+import {Loader} from '../Loader';
 
-export interface CommonButtonProps
-  extends Omit<TouchableOpacityProps, 'style'> {
+export interface CommonButtonProps extends PressableScaleProps {
   title: string;
   wrapperContainer?: StyleProp<ViewStyle>;
   touchableStyle?: StyleProp<ViewStyle>;
@@ -33,27 +26,27 @@ export const CommonButton: React.FC<CommonButtonProps> = ({
   ...props
 }) => {
   return (
-    <View style={[styles.container, wrapperContainer]}>
-      <TouchableOpacity
-        activeOpacity={1}
-        style={[
-          styles.touchableContainer,
-          {
-            backgroundColor: isDisabled
-              ? COLORS.lightAluminum
-              : COLORS.brightRed,
-          },
-          touchableStyle,
-        ]}
-        {...props}>
-        {isLoading ? (
-          <ActivityIndicator />
-        ) : (
-          <CustomText style={[styles.touchableText, titleStyle]}>
-            {title}
-          </CustomText>
-        )}
-      </TouchableOpacity>
-    </View>
+    <PressableScale {...props}>
+      <View style={[styles.container, wrapperContainer]}>
+        <View
+          style={[
+            styles.touchableContainer,
+            {
+              backgroundColor: isDisabled
+                ? COLORS.lightAluminum
+                : COLORS.brightRed,
+            },
+            touchableStyle,
+          ]}>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <CustomText style={[styles.touchableText, titleStyle]}>
+              {title}
+            </CustomText>
+          )}
+        </View>
+      </View>
+    </PressableScale>
   );
 };

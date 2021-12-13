@@ -33,7 +33,6 @@ export const CreateTask: React.FC<CreateTaskProps> = ({
         <AppForm
           initialValues={{
             title: '',
-            desc: '',
           }}
           validationSchema={validationTaskSchema}
           onSubmit={onSubmitTask}>
@@ -44,7 +43,6 @@ export const CreateTask: React.FC<CreateTaskProps> = ({
             maxLength={40}
           />
 
-          <AppInputField placeholder="your task desc" name="desc" />
           <AppSubmitButton title={'add'} />
         </AppForm>
       </View>

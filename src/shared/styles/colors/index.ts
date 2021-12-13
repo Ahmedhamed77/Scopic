@@ -18,4 +18,5 @@ export enum COLORS {
   danger = '#b60000',
   shadGray = '#818181',
   lightShadGray = '#efefef',
+  aqua = '#1B86C5',
 }
