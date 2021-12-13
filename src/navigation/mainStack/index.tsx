@@ -10,12 +10,17 @@ const Stack = createNativeStackNavigator<MainParamsList>();
 export const MainStack = () => {
   const {isNewUser} = useSelector((store: Store) => store.auth);
 
-  console.log(isNewUser, '==');
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       {isNewUser ? (
         <>
-          <Stack.Screen name={MainParams.home} component={WelcomeScreen} />
+          <Stack.Screen
+            name={MainParams.home}
+            component={WelcomeScreen}
+            options={{
+              gestureEnabled: true,
+            }}
+          />
           <Stack.Screen name={MainParams.list} component={ListScreen} />
           <Stack.Screen name={MainParams.profile} component={ProfileScreen} />
         </>

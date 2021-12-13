@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  StyleProp,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-  ViewStyle,
-} from 'react-native';
+import {StyleProp, TouchableOpacity, View, ViewStyle} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 import {StackNavigationProp} from '@react-navigation/stack';
 
@@ -37,25 +31,32 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <View style={[styles.container, wrapperStyle]}>
-      <TouchableOpacity activeOpacity={1} onPress={onNavigateBack}>
-        {!inverted && (
+      {!inverted ? (
+        <TouchableOpacity activeOpacity={1} onPress={onNavigateBack}>
           <CustomText fontFamily="Poppins-Bold" style={styles.navigators}>
             {Dictionary.back}
           </CustomText>
-        )}
-      </TouchableOpacity>
-
+        </TouchableOpacity>
+      ) : (
+        <View style={styles.empty}>
+          <CustomText />
+        </View>
+      )}
       <CustomText fontFamily="Poppins-Bold" style={styles.screenTitle}>
         {screenTitle}
       </CustomText>
 
-      <TouchableOpacity activeOpacity={1} onPress={onNextScreen}>
-        {rightTitle && (
+      {rightTitle ? (
+        <TouchableOpacity activeOpacity={1} onPress={onNextScreen}>
           <CustomText fontFamily="Poppins-Bold" style={styles.navigators}>
             {rightTitle}
           </CustomText>
-        )}
-      </TouchableOpacity>
+        </TouchableOpacity>
+      ) : (
+        <View style={styles.empty}>
+          <CustomText />
+        </View>
+      )}
     </View>
   );
 };

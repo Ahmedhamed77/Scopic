@@ -1,7 +1,5 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {COLORS} from '../../styles';
-
-const {width} = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,5 +14,8 @@ export const styles = StyleSheet.create({
   navigators: {
     color: COLORS.brightRed,
     textTransform: 'capitalize',
+  },
+  empty: {
+    paddingHorizontal: 12,
   },
 });

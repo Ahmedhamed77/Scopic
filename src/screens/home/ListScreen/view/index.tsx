@@ -3,7 +3,14 @@ import React from 'react';
 import {styles} from './style';
 import {FlatList, ListRenderItem, View} from 'react-native';
 import {CreateTask} from '../createTask';
-import {CustomText, Swipable, Task, TaskValues} from '../../../../shared';
+import {
+  CustomText,
+  ItemSeparator,
+  removeSpaces,
+  Swipable,
+  Task,
+  TaskValues,
+} from '../../../../shared';
 import {Footer} from '../footer';
 import {HeaderFlatList} from '../header';
 import {PersistTasks} from '../../../../redux/persistTasks/types';
@@ -33,34 +40,23 @@ export const ListScreenView: React.FC<ListScreenViewProps> = ({
   persistTask,
   onDelete,
 }) => {
-  // const renderItem: ListRenderItem<Task> = ({item}) => {
-  //   const title = item.data.title.trim().replace(/\s+/g, ' ');
-  //   const onDeleteItem = () => onDelete(item.id);
-  //   return (
-  //     <Swipable onDelete={onDeleteItem}>
-  //       <View key={item.id} style={styles.renderItemContainer}>
-  //         <CustomText style={styles.titleStyle}>{title}</CustomText>
-  //       </View>
-  //     </Swipable>
-  //   );
-  // };
+  const newData: Task[] = toggle
+    ? tasks
+    : (persistTask as Omit<Task[], 'data'>);
 
-  // const renderPressistItem: ListRenderItem<PersistTasks> = ({item}) => {
-  //   const title = item.title.trim().replace(/\s+/g, ' ');
-  //   return (
-  //     <Swipable onDelete={onDeleteItem}>
-  //       <View key={item.id} style={styles.renderItemContainer}>
-  //         <CustomText style={styles.titleStyle}>{title}</CustomText>
-  //       </View>
-  //     </Swipable>
-  //   );
-  // };
-
-  // const Separator = () => {
-  //   return <View style={styles.separator} />;
-  // };
-
-  console.log(toggle, '===r');
+  const renderItem: ListRenderItem<Task> = ({item}) => {
+    const title = toggle
+      ? removeSpaces(item.data.title)
+      : removeSpaces(item.title);
+    const onDeleteItem = () => onDelete(item.id);
+    return (
+      <Swipable onDelete={onDeleteItem}>
+        <View key={item.id} style={styles.renderItemContainer}>
+          <CustomText style={styles.titleStyle}>{title}</CustomText>
+        </View>
+      </Swipable>
+    );
+  };
 
   return (
     <>
@@ -69,42 +65,8 @@ export const ListScreenView: React.FC<ListScreenViewProps> = ({
         onClose={onCloseModal}
         onSubmitTask={onSubmitTask}
       />
-
-      <HeaderFlatList
-        onHeaderPress={onHeaderPress}
-        toggle={toggle}
-        onToggle={onSwitchToggle}
-      />
-
-      {!toggle
-        ? persistTask?.map(item => {
-            const title = item.title.trim().replace(/\s+/g, ' ');
-
-            const onDeleteItem = () => onDelete(item.id);
-
-            return (
-              <Swipable key={item.id} onDelete={onDeleteItem}>
-                <View key={item.id} style={styles.renderItemContainer}>
-                  <CustomText style={styles.titleStyle}>{title}</CustomText>
-                </View>
-              </Swipable>
-            );
-          })
-        : tasks.map(item => {
-            console.log(item, '==');
-            const title = item.data.title.trim().replace(/\s+/g, ' ');
-            const onDeleteItem = () => onDelete(item.id);
-            return (
-              <Swipable key={item.id} onDelete={onDeleteItem}>
-                <View key={item.id} style={styles.renderItemContainer}>
-                  <CustomText style={styles.titleStyle}>{title}</CustomText>
-                </View>
-              </Swipable>
-            );
-          })}
-
-      {/* <FlatList
-        data={tasks}
+      <FlatList
+        data={newData}
         keyExtractor={item => item.id}
         contentContainerStyle={styles.container}
         renderItem={renderItem}
@@ -115,7 +77,7 @@ export const ListScreenView: React.FC<ListScreenViewProps> = ({
             onToggle={onSwitchToggle}
           />
         }
-        ItemSeparatorComponent={Separator}
+        ItemSeparatorComponent={ItemSeparator}
         ListEmptyComponent={() => {
           return (
             <View style={styles.emptyContainer}>
@@ -123,8 +85,35 @@ export const ListScreenView: React.FC<ListScreenViewProps> = ({
             </View>
           );
         }}
-      /> */}
+      />
       <Footer onPress={onAdd} />
     </>
   );
 };
+
+// <CreateTask
+// modalVisible={modalVisible}
+// onClose={onCloseModal}
+// onSubmitTask={onSubmitTask}
+// />
+
+// <HeaderFlatList
+// onHeaderPress={onHeaderPress}
+// toggle={toggle}
+// onToggle={onSwitchToggle}
+// />
+// <View style={{paddingHorizontal: 24, backgroundColor: 'red'}}>
+// {/* {toggle ?} */}
+// {tasks.map(item => {
+//   console.log(item, '==');
+//   const title = item.data.title.trim().replace(/\s+/g, ' ');
+//   const onDeleteItem = () => onDelete(item.id);
+//   return (
+//     <Swipable key={item.id} onDelete={onDeleteItem}>
+//       <View style={styles.renderItemContainer}>
+//         <CustomText style={styles.titleStyle}>{title}</CustomText>
+//       </View>
+//     </Swipable>
+//   );
+// })}
+// </View>

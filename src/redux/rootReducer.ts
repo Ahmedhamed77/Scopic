@@ -10,8 +10,8 @@ import {Store} from './types';
 const persistConfig = {
   key: 'Root',
   storage: AsyncStorage,
-  whiteList: [],
-  blacklist: ['auth', 'task', 'persistTasks'],
+  whiteList: ['persistTasks'],
+  blacklist: ['auth', 'task'],
 };
 
 const rootReducer = combineReducers({

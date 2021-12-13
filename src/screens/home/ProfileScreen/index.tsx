@@ -5,17 +5,13 @@ import {
   CustomText,
   Header,
   logout,
-  PressableScale,
   ScreenLayout,
 } from '../../../shared';
 import {UseAuth} from '../../../shared/hooks';
-
 import {styles} from './style';
+
 interface ProfileScreenProps {}
-interface IRow {
-  id: string;
-  title: string;
-}
+
 export const ProfileScreen: React.FC<ProfileScreenProps> = () => {
   const {user} = UseAuth();
 
@@ -28,7 +24,11 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = () => {
           <CustomText>{user?.email}</CustomText>
         </View>
 
-        <CommonButton onPress={logout} title="logout" />
+        <CommonButton
+          wrapperContainer={{marginBottom: 32}}
+          onPress={logout}
+          title="logout"
+        />
       </View>
     </ScreenLayout>
   );

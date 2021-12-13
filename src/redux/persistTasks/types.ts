@@ -1,3 +1,5 @@
+import {Task} from '../../shared';
+
 export enum ActionType {
   CREATE_TASK = 'CREATE_TASK',
   DELETE_TASK = 'DELETE_TASK',
@@ -13,9 +15,6 @@ interface DeleteTask {
   payload: string;
 }
 
-export interface PersistTasks {
-  title: string;
-  id: string;
-}
+export interface PersistTasks extends Omit<Task, 'data'> {}
 
 export type Action = CreateTask | DeleteTask;
